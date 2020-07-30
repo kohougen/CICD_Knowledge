@@ -32,7 +32,7 @@ LGTM is a code analysis platform for development teams to identify vulnerabiliti
 
 ## Integrate LGTM Into CI Workflow [link](https://lgtm.com/help/lgtm/getting-started)
 1. If you own or administer a repository that's analyzed by LGTM, you can turn on automated code review for pull requests [Link](https://lgtm.com/help/lgtm/about-automated-code-review)
-1. Enabling automated review of pull requests doesn�ft block the merging of pull requests
+1. Enabling automated review of pull requests doesn't block the merging of pull requests
 1. Install The LGTM.com GitHub App [Link](https://lgtm.com/help/lgtm/github-apps-integration#install-github-app)
 1. Remove repositories & uninstall the app in github project settings > Integrations > LGTM.com Configure 
 1. Deactive the automated code review in LGTM project manage page > Integrations tab > click the management icon in the right of 'Automated code review'
