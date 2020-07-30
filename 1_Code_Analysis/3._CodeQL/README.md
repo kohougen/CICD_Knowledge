@@ -1,6 +1,6 @@
 # CodeQL
 
-## QL
+## QL(Query Language)
 1. QL is a logic programming language
 1. QL is the powerful query language that underlies CodeQL, which is used to analyze code
 
@@ -27,8 +27,8 @@ select p
 ## CodeQL CLI
 1. Software developers and security researchers can secure their code using the CodeQL CLI
 1. Create a new *CodeQL HOME* directory where you can place the CLI and any queries and libraries you want to use
-1. Download CLI from [here](https://github.com/github/codeql-cli-binaries/releases) Å¶codeql.zip contains the CLI for all supported platforms such as LGTM
-1ÅDunzip CodeQL CLI to CodeQL home directory (*CodeQL HOME*/codeql/...)
+1. Download CLI from [here](https://github.com/github/codeql-cli-binaries/releases) codeql.zip contains the CLI for all supported platforms such as LGTM
+1. unzip CodeQL CLI to CodeQL home directory (*CodeQL HOME*/codeql/...)
 1. add CodeQL directory to path (*CodeQL HOME*/ql/...)
 1. Obtain CodeQL queries from [CodeQL repository] (https://github.com/github/codeql)
 1. Run `codeql resolve languages` to show which languages are available for database creation
