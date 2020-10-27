@@ -20,5 +20,5 @@ Apache JMeter application is open source software, a 100% pure Java application 
 ## Sample Performance Test(test login api with userList file)
 1. Double Click bin\jmeter.bat To Launch Up Jmeter With GUI Mode
 1. Follow The Steps In 'How To Use' To Create A Test Plan And A Test Case
-![alt text](https://github.com/kohougen/CICD_Knowledge/tree/master/2_Performance_Test/1_Jmeter/HTTP_Request.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/HTTP_Request.png)
 
