@@ -40,10 +40,10 @@ password        | ${USER_2}
    * ${__StringFromFile(filePath)}: Get String List From File
    * ${__split(stringToSplit, VAR): Split The `stringToSplit` Set The Result To `VAR`, You Can Use `VAR_1` to get the first subString, use `VAR_2` to get the second one.
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/User_Parameters.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/User_Parameters.PNG)
 
 1. Create Test User List File And Add Some Records 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/userList.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/userList.PNG)
 
 1. Set The Following Information In HTTP Request
    * Protocol: https
@@ -54,7 +54,7 @@ password        | ${USER_2}
    * Content Encoding: UTF-8
    * Request Body Data: login information(${username} and ${password} are variables which defined in 'User Parameters')
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/HTTP_Request.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/HTTP_Request.PNG)
 
 1. Follow The Steps In 'How To Use' To Create Test Result Report
 1. Set Thread Properties In Thread Group To Confirm If The Test Case Works Well
@@ -63,12 +63,12 @@ password        | ${USER_2}
    * Loop Count: Number of times to perform the test case
      * "infinite" can be selected causing the test to run until manually stopped or end of the thread lifetime is reached
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/ThreadGroup.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/ThreadGroup.PNG)
 
 1. Run The Test Plan In GUI Mode To Confirm If Everything Is OK(Right click Thread Group > Start)
 1. Confirm Test Result(Request Head/Body And Response Head/Body)
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Test_Result.png)
+![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Test_Result.PNG)
 
 1. Add More Test Data And Update Thread Properties For The Real Performance Test(Set A Big Number)
 1. Save Test Plan(File > Save TestPlan as)
