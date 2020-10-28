@@ -21,7 +21,7 @@ Apache JMeter application is open source software, a 100% pure Java application 
 
 ## Sample Performance Test(test login api with AWS API Gateway)
 1. Launch Up Jmeter With GUI Mode
-   * No Proxy: Double Click bin\jmeter.bat To
+   * No Proxy: Double Click bin\jmeter.bat
    * With Proxy: Run The Following Command
       * -H: Proxy server
       * -P: Proxy server port
@@ -43,7 +43,8 @@ password        | ${USER_2}
 
 ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/User_Parameters.PNG)
 
-1. Create Test User List File And Add Some Records 
+1. Create Test User List File And Add Some Records(username/password)
+
 ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/userList.PNG)
 
 1. Set The Following Information In HTTP Request
@@ -58,7 +59,7 @@ password        | ${USER_2}
 ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/HTTP_Request.PNG)
 
 1. Follow The Steps In 'How To Use' To Create Test Result Report
-1. Set Thread Properties In Thread Group To Confirm If The Test Case Works Well
+1. Set Thread Properties In Thread Group (Just want to confirm if the test case works well, no need to set a big number)
    * Number of Threads(users): Number of users to simulate
    * Ramp-up period(seconds): How long JMeter should take to get all the threads started
    * Loop Count: Number of times to perform the test case
@@ -68,10 +69,11 @@ password        | ${USER_2}
 
 1. Run The Test Plan In GUI Mode To Confirm If Everything Is OK(Right click Thread Group > Start)
 1. Confirm Test Result(Request Head/Body And Response Head/Body)
+   * This sample have two success requests and one failure request
 
 ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Test_Result.PNG)
 
-1. Add More Test Data And Update Thread Properties For The Real Performance Test(Set A Big Number)
+1. Add More Test Data And Update Thread Properties For The Real Performance Test(Set A Big Number And Long Period)
 1. Save Test Plan(File > Save TestPlan as)
 1. Run The Performance Test In Command Mode
    * No Proxy: Run The Following Command
@@ -96,6 +98,13 @@ password        | ${USER_2}
    ```
 
    * JMeter Log
+      * summary = 3: test samples
+      * in 00:00:04 = 0.8/s: test time(4s) and test samples per second(0.8/s)
+      * Avg: 1400: avarage response time(latency)
+      * Min: 801: min response time(latency)
+      * Max: 2337: max response time(latency)
+      * Err: 1 (33.33%): count of error response and the percentage
+
    ```log
    2020-10-28 12:36:14,629 INFO o.a.j.JMeter: Creating summariser <summary>
    2020-10-28 12:36:14,636 INFO o.a.j.e.StandardJMeterEngine: Running the test!
