@@ -33,19 +33,18 @@ Apache JMeter application is open source software, a 100% pure Java application 
 1. Follow The Steps In 'How To Use' To Create A Test Plan And A Test Case
 1. Create A User Parameters And Set The Following Information
 
-Name | Value
---------------- | -------------------------------------------------------------------------------
-split_user_info | ${__split(${__StringFromFile(E:\\tool\\jmeter\\testPlan\\userList.txt)}, USER)}
-username        | ${USER_1}
-password        | ${USER_2}
+   Name | Value
+   --------------- | -------------------------------------------------------------------------------
+   split_user_info | ${__split(${__StringFromFile(E:\\tool\\jmeter\\testPlan\\userList.txt)}, USER)}
+   username        | ${USER_1}
+   password        | ${USER_2}
    * ${__StringFromFile(filePath)}: Get String List From File
    * ${__split(stringToSplit, VAR): Split The `stringToSplit` Set The Result To `VAR`, You Can Use `VAR_1` to get the first subString, use `VAR_2` to get the second one.
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/User_Parameters.PNG)
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/User_Parameters.PNG)
 
 1. Create Test User List File And Add Some Records(username/password)
-
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/userList.PNG)
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/userList.PNG)
 
 1. Set The Following Information In HTTP Request
    * Protocol: https
@@ -56,22 +55,22 @@ password        | ${USER_2}
    * Content Encoding: UTF-8
    * Request Body Data: login information(${username} and ${password} are variables which defined in 'User Parameters')
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/HTTP_Request.PNG)
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/HTTP_Request.PNG)
 
 1. Follow The Steps In 'How To Use' To Create Test Result Report
 1. Set Thread Properties In Thread Group (Just want to confirm if the test case works well, no need to set a big number)
    * Number of Threads(users): Number of users to simulate
    * Ramp-up period(seconds): How long JMeter should take to get all the threads started
    * Loop Count: Number of times to perform the test case
-     * "infinite" can be selected causing the test to run until manually stopped or end of the thread lifetime is reached
+      * "infinite" can be selected causing the test to run until manually stopped or end of the thread lifetime is reached
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/ThreadGroup.PNG)
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/ThreadGroup.PNG)
 
 1. Run The Test Plan In GUI Mode To Confirm If Everything Is OK(Right click Thread Group > Start)
 1. Confirm Test Result(Request Head/Body And Response Head/Body)
    * This sample have two success requests and one failure request
 
-![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Test_Result.PNG)
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Test_Result.PNG)
 
 1. Add More Test Data And Update Thread Properties For The Real Performance Test(Set A Big Number And Long Period)
 1. Save Test Plan(File > Save TestPlan as)
