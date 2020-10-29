@@ -44,6 +44,7 @@ Apache JMeter application is open source software, a 100% pure Java application 
    ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/User_Parameters.PNG)
 
 1. Create Test User List File And Add Some Records(username/password)
+
    ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/userList.PNG)
 
 1. Set The Following Information In HTTP Request
@@ -145,3 +146,27 @@ Apache JMeter application is open source software, a 100% pure Java application 
    2020-10-28 12:36:18,754 INFO o.a.j.r.Summariser: summary =      3 in 00:00:04 =    0.8/s Avg:  1400 Min:   801 Max:  2337 Err:     1 (33.33%)
    2020-10-28 12:36:18,758 INFO o.a.j.f.StringFromFile: StandardJMeterEngine closing file E:\tool\jmeter\testPlan\userList.txt
    ```
+
+## Performance Test With Login Authentication
+1. Create A HTTP Request For Login API
+
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Post_Login_API.PNG)
+
+1. Create A Regular Expression Extractor To Get Authentication From Response Of Login API (Right click Thread Group > Add > Post Processors > HTTP Request Regular Expression Extractor)
+   * Apply to: Main sample only
+   * Field to check: Body (Get authentication from response body)
+   * Name of created variable: `token` (This variable will be used in the next step)
+   * Regular Expression: "token":"(.+?)"
+   * Template: $1$ (Get the first part of Regular Expression)
+   * Match No: 1 (match once only)
+
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Get_Login_Authentication.PNG)
+
+   * You Can Test Regular Expression In `View Results Tree`'s Response Body Area
+
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Test_Regular_Expression.PNG)
+
+1. Create A HTTP Request For The Performance Test (Get myEvents)
+   * HTTP Header Manager: Authentication = `${token}` (Set the authentication we got before)
+
+   ![alt text](https://github.com/kohougen/CICD_Knowledge/blob/master/2_Performance_Test/1_Jmeter/Pictures/Get_MyEvents_API.PNG)
